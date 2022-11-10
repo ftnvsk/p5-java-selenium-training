@@ -11,7 +11,7 @@ public class BasePage {
     public PageMethods pageMethods;
     public WindowMethods windowMethods;
     public FrameMethods frameMethods;
-    public AlertMethod alertMethods;
+    public AlertMethods alertMethods;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -19,7 +19,7 @@ public class BasePage {
         pageMethods = new PageMethods(driver);
         windowMethods = new WindowMethods(driver);
         frameMethods = new FrameMethods(driver);
-        alertMethods = new AlertMethod(driver);
+        alertMethods = new AlertMethods(driver);
         PageFactory.initElements(driver, this);
     }
 

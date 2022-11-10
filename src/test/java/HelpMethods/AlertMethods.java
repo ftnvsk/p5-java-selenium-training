@@ -3,10 +3,10 @@ package HelpMethods;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 
-public class AlertMethod {
+public class AlertMethods {
 
     public WebDriver driver;
-    public AlertMethod(WebDriver driver) {
+    public AlertMethods(WebDriver driver) {
         this.driver = driver;
     }
 
