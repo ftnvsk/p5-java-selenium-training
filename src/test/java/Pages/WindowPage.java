@@ -13,7 +13,7 @@ public class WindowPage extends BasePage {
     }
 
     @FindBy(css = ".nav-stacked>li>a")
-    private List<WebElement> windowOption;
+    private List<WebElement> windowOptions;
 
     @FindBy(css = "#Tabbed button")
     private WebElement blankWindow;
@@ -25,7 +25,29 @@ public class WindowPage extends BasePage {
     private WebElement clickMultipleWindow;
 
     public void  singleTab() {
-        windowOption.get(0).click();
+        windowOptions.get(0).click();
+        blankWindow.click();
+        windowMethods.switchToSpecificWindow(1);
+        windowMethods.closeWindow();
+        windowMethods.switchToSpecificWindow(0);
+    }
+
+    public void  windowTab() {
+        windowOptions.get(1).click();
+        clickSepNewWindow.click();
+        windowMethods.switchToSpecificWindow(1);
+        windowMethods.closeWindow();
+        windowMethods.switchToSpecificWindow(0);
+    }
+
+    public void  multipleTab() {
+        windowOptions.get(2).click();
+        clickMultipleWindow.click();
+        windowMethods.switchToSpecificWindow(2);
+        windowMethods.closeWindow();
+        windowMethods.switchToSpecificWindow(1);
+        windowMethods.closeWindow();
+        windowMethods.switchToSpecificWindow(0);
     }
 
 }

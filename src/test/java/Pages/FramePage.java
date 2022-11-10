@@ -26,11 +26,11 @@ public class FramePage extends BasePage {
         frameMethods.switchToDefault();
     }
 
-    public void multipleFrame(String frameMesg) {
+    public void multipleFrame(String frameMsg) {
         buttonsList.get(1).click();
         frameMethods.switchFrame(driver.findElement(By.cssSelector("iframe[src='MultipleFrames.html']")));
         frameMethods.switchFrame(driver.findElement(By.cssSelector("iframe[src='SingleFrame.html']")));
-        inputElement.sendKeys(frameMesg);
+        inputElement.sendKeys(frameMsg);
     }
 
 }

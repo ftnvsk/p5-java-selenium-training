@@ -1,7 +1,5 @@
 package Pages;
 
-import org.checkerframework.common.reflection.qual.ForName;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,22 +15,31 @@ public class RegisterPage extends BasePage {
     private WebElement switchToElement;
 
     @FindBy(xpath = "//a[text()='Alerts']")
-    private WebElement alertsElement;
+    private WebElement alertElement;
 
     @FindBy(xpath = "//a[text()='Frames']")
-    private WebElement framesElement;
+    private WebElement frameElement;
+
+    @FindBy(xpath = "//a[text()='Windows']")
+    private WebElement windowElement;
 
     public void goToAlert() {
         Actions action = new Actions(driver);
         action.moveToElement(switchToElement).perform();
-        alertsElement.click();
+        alertElement.click();
         driver.navigate().to("https://demo.automationtesting.in/Alerts.html");
     }
 
     public void goToFrames() {
         elementMethods.moveToElement(switchToElement);
-        elementMethods.clickElement(framesElement);
+        elementMethods.clickElement(frameElement);
         pageMethods.navigateToURL("https://demo.automationtesting.in/Alerts.html");
+    }
+
+    public void goToWindow() {
+        elementMethods.moveToElement(switchToElement);
+        elementMethods.clickElement(frameElement);
+        pageMethods.navigateToURL("https://demo.automationtesting.in/Windows.html");
     }
 
 }
