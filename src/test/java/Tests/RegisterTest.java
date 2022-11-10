@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Second extends Hooks {
+public class RegisterTest extends Hooks {
 
     WebElement skipSignBtn, firstName, lastName, email, gender, skillSelector, language, hobbies, country,
             countrySearch, yearSelector, uploadFile;
@@ -19,15 +19,12 @@ public class Second extends Hooks {
 
         skipSignBtn = cdriver.findElement(By.id("btn2"));
         elementMethod.clickElement(skipSignBtn);
-//        skipSignBtn.click();
 
         firstName = cdriver.findElement(By.cssSelector("input[ng-model='FirstName']"));
         elementMethod.fillElement(firstName, "Fiiillip");
-//        firstName.sendKeys("Fiiillipppp");
 
         lastName = cdriver.findElement(By.cssSelector("input[ng-model='LastName']"));
         elementMethod.fillElement(lastName, "Taaantaaataaaaaa");
-//        lastName.sendKeys("Tanananantaaaaa");
 
         email = cdriver.findElement(By.cssSelector("input[ng-model='EmailAdress']"));
         email.sendKeys("some.email@gmail.com");
@@ -41,8 +38,6 @@ public class Second extends Hooks {
         skillSelector = cdriver.findElement(By.id("Skills"));
         String skillsValue = "Java";
         elementMethod.selectDropDownText(skillSelector, skillsValue);
-//        skill = new Select(skillSelector);
-//        skill.selectByVisibleText(skillsValue);
 
         uploadFile = cdriver.findElement(By.xpath("//input[@id='imagesrc']"));
         Thread.sleep(5000);
@@ -74,8 +69,6 @@ public class Second extends Hooks {
         yearSelector = cdriver.findElement(By.id("yearbox"));
         String yearValue = "1998";
         elementMethod.selectDropValue(yearSelector, yearValue);
-//        year = new Select(yearSelector);
-//        year.selectByValue(yearValue);
 
     }
 
