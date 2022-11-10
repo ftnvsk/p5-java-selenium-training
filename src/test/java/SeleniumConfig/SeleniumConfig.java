@@ -12,10 +12,7 @@ public class SeleniumConfig {
     public WebDriver cdriver;
     private String baseURL = "https://demo.automationtesting.in/Index.html";
 
-
-    @BeforeMethod
     public void prepareDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         cdriver = new ChromeDriver();
         cdriver.manage().window().maximize();
         // WAIT implicit:
@@ -23,7 +20,6 @@ public class SeleniumConfig {
         cdriver.get(baseURL);
     }
 
-    @AfterMethod
     public void afterTest() {
         cdriver.quit();
     }

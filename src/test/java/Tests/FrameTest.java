@@ -3,17 +3,17 @@ package Tests;
 import HelpMethods.ElementMethods;
 import HelpMethods.FrameMethods;
 import HelpMethods.PageMethods;
-import SeleniumConfig.SeleniumConfig;
+import SeleniumConfig.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class FrameTest extends SeleniumConfig {
+public class FrameTest extends Hooks {
 
     @Test
-    public void metodaTest() throws InterruptedException {
+    public void frameTest() throws InterruptedException {
 
         ElementMethods elementMethods = new ElementMethods(cdriver);
         PageMethods pageMethods = new PageMethods(cdriver);

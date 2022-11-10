@@ -11,17 +11,16 @@ public class LoginPage extends BasePage {
     }
 
     @FindBy(css = "input[placeholder='E mail']")
-    public WebElement emailElement;
-
+    private WebElement emailElement;
 
     @FindBy(xpath = "//input[@placeholder='Password']")
-    public WebElement pwdElement;
+    private WebElement pwdElement;
 
     @FindBy(id = "enterbtn")
-    public WebElement submitBtn;
+    private WebElement submitBtn;
 
     @FindBy(id = "errormsg")
-    public WebElement errMsgElement;
+    private WebElement errMsgElement;
 
     public void validateLoginInvalid(String email, String pwd, String expectedErrMsg) {
         elementMethods.fillElement(emailElement, email);

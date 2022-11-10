@@ -11,7 +11,14 @@ public class IndexPage extends BasePage {
     }
 
     @FindBy(id = "btn1")
-    public WebElement signInElement;
+    private WebElement signInElement;
+
+    @FindBy(id = "btn2")
+    private WebElement skipSignIn;
+
+    public void clickSkipSignIn() {
+        elementMethods.clickElement(skipSignIn);
+    }
 
     public void clickSignIn() {
         elementMethods.clickElement(signInElement);

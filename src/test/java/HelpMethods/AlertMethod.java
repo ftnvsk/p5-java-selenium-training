@@ -10,17 +10,17 @@ public class AlertMethod {
         this.driver = driver;
     }
 
-    public void AcceptAlert() {
+    public void acceptAlert() {
         Alert alert = driver.switchTo().alert();
         alert.accept();
     }
 
-    public void DismissAlert() {
+    public void dismissAlert() {
         Alert alert = driver.switchTo().alert();
         alert.dismiss();
     }
 
-    public void FillAlert(String alertMsg) {
+    public void fillAlert(String alertMsg) {
         Alert alert = driver.switchTo().alert();
         alert.sendKeys(alertMsg);
         alert.accept();

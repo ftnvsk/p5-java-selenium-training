@@ -1,13 +1,13 @@
 package Tests;
 
 import HelpMethods.ElementMethods;
-import SeleniumConfig.SeleniumConfig;
+import SeleniumConfig.Hooks;
 import org.openqa.selenium.*;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Second extends SeleniumConfig {
+public class Second extends Hooks {
 
     WebElement skipSignBtn, firstName, lastName, email, gender, skillSelector, language, hobbies, country,
             countrySearch, yearSelector, uploadFile;

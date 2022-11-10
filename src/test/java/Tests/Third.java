@@ -3,15 +3,14 @@ package Tests;
 import HelpMethods.ElementMethods;
 import HelpMethods.PageMethods;
 import HelpMethods.WindowMethods;
-import SeleniumConfig.SeleniumConfig;
+import SeleniumConfig.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Third extends SeleniumConfig {
+public class Third extends Hooks {
 
     WebElement switchMenu, skipSignBtn, windowsMenu;
 
