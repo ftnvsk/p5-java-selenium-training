@@ -18,7 +18,7 @@ public class LoginTest extends Hooks {
         indexPage.clickSignIn();
 
         LoginPage loginPage = new LoginPage(cdriver);
-        Thread.sleep(10000);
+        Thread.sleep(8000);
         loginPage.validateLoginInvalid(
                 propertiesFile.getValue("email"),
                 propertiesFile.getValue("password"),
