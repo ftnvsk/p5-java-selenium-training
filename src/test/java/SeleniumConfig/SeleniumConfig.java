@@ -14,10 +14,10 @@ public class SeleniumConfig {
 
     public void prepareDriver() {
         cdriver = new ChromeDriver();
+        cdriver.get(baseURL);
         cdriver.manage().window().maximize();
         // WAIT implicit:
         cdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(11));
-        cdriver.get(baseURL);
     }
 
     public void afterTest() {

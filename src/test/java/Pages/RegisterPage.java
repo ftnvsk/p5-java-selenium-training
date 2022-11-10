@@ -23,6 +23,27 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//a[text()='Windows']")
     private WebElement windowElement;
 
+    @FindBy(css = "input[ng-model='FirstName']")
+    private WebElement firstNameElement;
+
+    @FindBy(css = "input[ng-model='LastName']")
+    private WebElement lastNameElement;
+
+    @FindBy(css = "input[ng-model='EmailAdress']")
+    private WebElement emailElement;
+
+    @FindBy(css = "input[value='Male']")
+    private WebElement genderElement;
+
+    @FindBy(css = "input[value='Cricket']")
+    private WebElement hobbiesElement;
+
+    @FindBy(id = "Skills")
+    private WebElement skillsElement;
+
+    @FindBy(xpath = "//input[@id='imagesrc']")
+    private WebElement uploadElement;
+
     public void goToAlert() {
         Actions action = new Actions(driver);
         action.moveToElement(switchToElement).perform();
@@ -38,8 +59,22 @@ public class RegisterPage extends BasePage {
 
     public void goToWindow() {
         elementMethods.moveToElement(switchToElement);
-        elementMethods.clickElement(frameElement);
+        elementMethods.clickElement(windowElement);
         pageMethods.navigateToURL("https://demo.automationtesting.in/Windows.html");
+    }
+
+    public void uploadFileRegisterPage(String fileLoc) throws InterruptedException {
+        Thread.sleep(5000);
+        uploadElement.sendKeys(fileLoc);
+    }
+    public void fillRegisterPage(String fname, String lname, String email, String skillValue) throws InterruptedException {
+        Thread.sleep(5000);
+        elementMethods.fillElement(firstNameElement, fname);
+        elementMethods.fillElement(lastNameElement, lname);
+        elementMethods.fillElement(emailElement, email);
+        elementMethods.clickElement(genderElement);
+        elementMethods.clickElement(hobbiesElement);
+        elementMethods.selectDropDownText(skillsElement, skillValue);
     }
 
 }
