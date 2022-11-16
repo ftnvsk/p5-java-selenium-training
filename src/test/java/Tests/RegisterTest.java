@@ -1,33 +1,27 @@
 package Tests;
 
-import HelpMethods.ElementMethods;
 import Pages.IndexPage;
 import Pages.RegisterPage;
 import SeleniumConfig.Hooks;
 import org.openqa.selenium.*;
 import org.testng.annotations.Test;
+import java.util.HashMap;
 
 public class RegisterTest extends Hooks {
-
-    WebElement country, countrySearch;
 
     @Test
     public void SkipSigninTest() throws InterruptedException {
 
+        HashMap<String, String> testData = propertiesFile.getAll();
         IndexPage indexPage = new IndexPage(cdriver);
-        ElementMethods elementMethods = new ElementMethods(cdriver);
+        RegisterPage registerPage = new RegisterPage(cdriver);
         indexPage.clickSkipSignIn();
         Thread.sleep(4000);
 
-        RegisterPage registerPage = new RegisterPage(cdriver);
 
-        registerPage.uploadFileRegisterPage(propertiesFile.getValue("fileLoc"));
+        registerPage.uploadFileRegisterPage(testData);
 
-        registerPage.fillRegisterPage(
-                propertiesFile.getValue("firstName"),
-                propertiesFile.getValue("lastName"),
-                propertiesFile.getValue("email"),
-                propertiesFile.getValue("skills"));
+        registerPage.fillRegisterPage(testData);
 
         Thread.sleep(3000);
 
@@ -35,13 +29,11 @@ public class RegisterTest extends Hooks {
         js.executeScript("arguments[0].scrollIntoView();", cdriver.findElement(By.xpath("//button[@value='Refresh']")));
         Thread.sleep(4000);
 
-        registerPage.selectLanguage(propertiesFile.getValue("language"));
+        registerPage.selectLanguage(testData);
 
-        registerPage.selectCountry(propertiesFile.getValue("country"));
+        registerPage.selectCountry(testData);
 
-        registerPage.selectDateOfBirth(propertiesFile.getValue("year"),
-                propertiesFile.getValue("month"),
-                propertiesFile.getValue("day"));
+        registerPage.selectDateOfBirth(testData);
         Thread.sleep(10000);
 
     }

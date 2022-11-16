@@ -2,6 +2,7 @@ package inputFiles;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Properties;
 
 public class PropertiesFile {
@@ -25,6 +26,14 @@ public class PropertiesFile {
 
     public String getValue(String key) {
         return properties.getProperty(key);
+    }
+
+    public HashMap<String, String> getAll() {
+        HashMap<String, String> testData = new HashMap<>();
+        for(Object key : properties.keySet()) {
+            testData.put(key.toString(), properties.getProperty(key.toString()));
+        }
+        return testData;
     }
 
 }

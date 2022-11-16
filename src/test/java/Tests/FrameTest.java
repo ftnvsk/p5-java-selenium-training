@@ -5,11 +5,7 @@ import Pages.FramePage;
 import Pages.IndexPage;
 import Pages.RegisterPage;
 import SeleniumConfig.Hooks;
-import inputFiles.PropertiesFile;
-
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class FrameTest extends Hooks {
 

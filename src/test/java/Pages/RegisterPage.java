@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import java.util.HashMap;
 import java.util.List;
 
 public class RegisterPage extends BasePage {
@@ -85,44 +86,44 @@ public class RegisterPage extends BasePage {
         pageMethods.navigateToURL("https://demo.automationtesting.in/Windows.html");
     }
 
-    public void uploadFileRegisterPage(String fileLoc) throws InterruptedException {
+    public void uploadFileRegisterPage(HashMap<String, String> testData) throws InterruptedException {
         Thread.sleep(2000);
-        uploadElement.sendKeys(fileLoc);
+        uploadElement.sendKeys(testData.get("fileLoc"));
     }
-    public void fillRegisterPage(String fname, String lname, String email, String skillValue) throws InterruptedException {
+    public void fillRegisterPage(HashMap<String, String> testData) throws InterruptedException {
         Thread.sleep(2000);
-        elementMethods.fillElement(firstNameElement, fname);
-        elementMethods.fillElement(lastNameElement, lname);
-        elementMethods.fillElement(emailElement, email);
+        elementMethods.fillElement(firstNameElement, testData.get("firstName"));
+        elementMethods.fillElement(lastNameElement, testData.get("lastName"));
+        elementMethods.fillElement(emailElement, testData.get("email"));
         elementMethods.clickElement(genderElement);
         elementMethods.clickElement(hobbiesElement);
-        elementMethods.selectDropDownText(skillsElement, skillValue);
+        elementMethods.selectDropDownText(skillsElement, testData.get("skills"));
     }
 
-    public void selectLanguage(String lang) {
+    public void selectLanguage(HashMap<String, String> testData) {
         elementMethods.clickElement(selectLanguageElement);
         for(Integer i = 0; i < langList.size(); i++) {
-            if(langList.get(i).getText().equals(lang)) {
+            if(langList.get(i).getText().equals(testData.get("language"))) {
                 elementMethods.clickElement(langList.get(i));
                 break;
             }
         }
     }
 
-    public void selectCountry(String country) {
+    public void selectCountry(HashMap<String, String> testData) {
         elementMethods.clickElement(countryElement);
         elementMethods.waitVisibleElement(countrySearchElement);
-        elementMethods.fillElement(countrySearchElement, country);
+        elementMethods.fillElement(countrySearchElement, testData.get("country"));
         elementMethods.fillElementHitEnter(countrySearchElement);
     }
 
-    public void selectDateOfBirth(String year, String month, String day) {
+    public void selectDateOfBirth(HashMap<String, String> testData) {
         elementMethods.clickElement(yearElement);
-        elementMethods.selectDropValue(yearElement, year);
+        elementMethods.selectDropValue(yearElement, testData.get("year"));
         elementMethods.clickElement(monthElement);
-        elementMethods.selectDropValue(monthElement, month);
+        elementMethods.selectDropValue(monthElement, testData.get("month"));
         elementMethods.clickElement(dayElement);
-        elementMethods.selectDropValue(dayElement, day);
+        elementMethods.selectDropValue(dayElement, testData.get("day"));
     }
 
 }

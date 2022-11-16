@@ -6,7 +6,6 @@ import Pages.LoginPage;
 import SeleniumConfig.Hooks;
 import org.testng.annotations.Test;
 
-
 public class LoginTest extends Hooks {
 
     String expectedErrSignin = "Invalid User Name or PassWord";
