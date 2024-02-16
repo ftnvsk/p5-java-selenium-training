@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="FTAutoProject" />
         <module name="FT Auto Project" />
-        <module name="FT Auto Project P5" />
       </profile>
     </annotationProcessing>
   </component>
