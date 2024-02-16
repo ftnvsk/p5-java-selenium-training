@@ -10,8 +10,8 @@ public class Hooks extends SeleniumConfig {
 
     @BeforeMethod
     public void prepareEnv() {
-        prepareDriver();
         propertiesFile = new PropertiesFile();
+        prepareDriver(propertiesFile.getValue("baseURL"));
     }
 
     @AfterMethod

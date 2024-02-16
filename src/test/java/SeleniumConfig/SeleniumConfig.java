@@ -10,9 +10,9 @@ import java.time.Duration;
 public class SeleniumConfig {
 
     public WebDriver cdriver;
-    private String baseURL = "https://demo.automationtesting.in/Index.html";
+ //   private String baseURL = "https://demo.automationtesting.in/Index.html";
 
-    public void prepareDriver() {
+    public void prepareDriver(String baseURL) {
         cdriver = new ChromeDriver();
         cdriver.get(baseURL);
         cdriver.manage().window().maximize();
